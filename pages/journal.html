@@ -33,6 +33,12 @@
 
 				<main class="col-9-12" id="mainCard">
 					<h1>Journal</h1>
+
+					<script id="posts-template" type="text/x-handlebars-template">
+						<h1>{{posts.title}}</h1>
+						<small>{{posts.date}}</small>
+						<p>{{posts.content}}</p>
+					</script>
 				</main> <!-- end .col-9-12 -->
 
 				<div class="col-1-12" id="fab">
@@ -43,6 +49,8 @@
 
 		<footer>
 			<!-- js -->
+			<script src="../js/handlebars.js"></script>
+			<script src="../js/jquery.min.js"></script>
 			<script src="../js/main.js"></script>
 		</footer>
 	</body>

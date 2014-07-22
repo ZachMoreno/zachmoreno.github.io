@@ -6,41 +6,27 @@ var mainCard        = document.getElementById('mainCard'),
 	aboutMenuItem   = document.getElementById('aboutMenuItem'),
 	folioMenuItem   = document.getElementById('folioMenuItem');
 
+
 // add class to animate the mainCard into place
 window.setTimeout(function(){
 	mainCard.className += mainCard.className ? ' inPlace' : 'inPlace';
 }, 0);
 
-// add class to animate the mainCard out of place
-// homeMenuItem.onClick(homeMenuItem.className += homeMenuItem.className ? ' outOfPlace' : 'outOfPlace');
-// healthMenuItem.onClick(healthMenuItem.className += healthMenuItem.className ? ' outOfPlace' : 'outOfPlace');
-// journalMenuItem.onClick(journalMenuItem.className += journalMenuItem.className ? ' outOfPlace' : 'outOfPlace');
-// aboutMenuItem.onClick(aboutMenuItem.className += aboutMenuItem.className ? ' outOfPlace' : 'outOfPlace');
-// folioMenuItem.onClick(folioMenuItem.className += folioMenuItem.className ? ' outOfPlace' : 'outOfPlace');
 
-// fetch JSON
-function fetchJSONFile(path, callback) {
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState === 4) {
-            if (httpRequest.status === 200) {
-                var data = JSON.parse(httpRequest.responseText);
-                if (callback) callback(data);
-            }
-        }
-    };
-    httpRequest.open('GET', path);
-    httpRequest.send(); 
-}
+jQuery(document).ready(function(){
+	var raw_template = jQuery('#posts-template').html(),
+		template     = Handlebars.compile(raw_template),
+		placeHolder  = jQuery("#mainCard");
 
-// Request the file and execute a callback with the parsed result once it is available
-fetchJSONFile('http://zachariahmoreno.com/api/get_recent_posts/', function(data){
-    // do something with your data
-    console.log(data);
-
-    function logArrayElements(element, index, array) {
-		console.log("a[" + index + "] = " + element);
-	}
-
-    data.posts.forEach(logArrayElements)
+	// Fetch all Blog Posts data from server in JSON
+	jQuery.get("http://zachariahmoreno.com/api/get_recent_posts/",function(data,status,xhr){
+		console.log(data);
+		
+		jQuery.each(data,function(index,element){
+			var html = template(element);
+			placeHolder.append(html);
+		});
+	});
 });
+
+

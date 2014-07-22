@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Zach Moreno Beta</title>
+
+		<!-- web fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,400italic,300italic,100italic,500italic' rel='stylesheet' type='text/css'>
+
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="grid.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<header>
+			<h1 id="logo-type">
+				<a href="index.html">
+					Zach Moreno
+				</a>
+			</h1>
+		</header>
+
+		<div class="grid">
+			<div class="row">
+				<aside class="col-2-12">
+					<ul id="main-nav">
+						<li><a href="index.html" class="active">home</a></li>
+						<li><a href="journal.html">journal</a></li>
+						<li><a href="health.html">health</a></li>
+						<li><a href="folio.html">folio</a></li>
+						<li><a href="about.html">about</a></li>
+					</ul>
+				</aside> <!-- end .col-2-12 -->
+
+				<main class="col-9-12" id="mainCard">
+					<h1>Making Internet.</h1>
+
+					<div class="row">
+						<div class="col-3-12">
+							<h2>Design</h2>
+							<p>Designing for the Web starts in the real world, then evolves into digital.</p>
+						</div> <!-- end .col-3-12 -->
+
+						<div class="col-3-12">
+							<h2>Document</h2>
+							<p>Modular development is key to scalability &amp; maintainability.</p>
+						</div> <!-- end .col-3-12 -->
+
+						<div class="col-3-12">
+							<h2>Develop</h2>
+							<p>Code typically involves a learning curve, unless docs are maintained.</p>
+						</div> <!-- end .col-3-12 -->
+
+						<div class="col-3-12">
+							<h2>Deploy</h2>
+							<p>Launching an app is a practice that involves many phases.</p>
+						</div> <!-- end .col-3-12 -->
+					</div> <!-- end .row -->
+
+					<div class="row">
+						<div class="col-4-12">
+							<h2>Contribute</h2>
+							<p>Participating in the larger development community is highly rewarding.</p>
+						</div> <!-- end .col-4-12 -->
+
+						<div class="col-4-12">
+							<h2>Keep Learning</h2>
+							<p>The Web is ever-evolving &amp; therefore so must your education.</p>
+						</div> <!-- end .col-4-12 -->
+
+						<div class="col-4-12">
+							<h2>Stay Relevant</h2>
+							<p>Engagement is what turns driven individuals into poweful communities.</p>
+						</div> <!-- end .col-4-12 -->
+					</div> <!-- end .row -->
+				</main> <!-- end .col-9-12 -->
+
+				<div class="col-1-12" id="fab">
+					<p>Z</p>
+				</div>
+			</div> <!-- end .row -->
+		</div> <!-- end .grid -->
+
+		<footer>
+			<!-- js -->
+			<script>
+				var mainCard = document.getElementById('mainCard');
+
+				window.setTimeout(function(){
+					mainCard.className += mainCard.className ? ' inPlace' : 'inPlace';
+				}, 0);
+			</script>
+		</footer>
+	</body>
+</html>

@@ -7,14 +7,14 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,400italic,300italic,100italic,500italic' rel='stylesheet' type='text/css'>
 
 		<!-- css -->
-		<link rel="stylesheet" type="text/css" href="grid.css">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/grid.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 
 	<body>
 		<header>
 			<h1 id="logo-type">
-				<a href="index.html">
+				<a href="index.html" id="homeMenuItem">
 					Zach Moreno
 				</a>
 			</h1>
@@ -24,11 +24,10 @@
 			<div class="row">
 				<aside class="col-2-12">
 					<ul id="main-nav">
-						<li><a href="index.html" class="active">home</a></li>
-						<li><a href="journal.html">journal</a></li>
-						<li><a href="health.html">health</a></li>
-						<li><a href="folio.html">folio</a></li>
-						<li><a href="about.html">about</a></li>
+						<li><a href="pages/journal.html" id="journalMenuItem">journal</a></li>
+						<li><a href="pages/health.html" id="healthMenuItem">health</a></li>
+						<li><a href="pages/folio.html" id="folioMenuItem">folio</a></li>
+						<li><a href="pages/about.html" id="aboutMenuItem">about</a></li>
 					</ul>
 				</aside> <!-- end .col-2-12 -->
 
@@ -83,13 +82,7 @@
 
 		<footer>
 			<!-- js -->
-			<script>
-				var mainCard = document.getElementById('mainCard');
-
-				window.setTimeout(function(){
-					mainCard.className += mainCard.className ? ' inPlace' : 'inPlace';
-				}, 0);
-			</script>
+			<script src="js/main.js"></script>
 		</footer>
 	</body>
 </html>

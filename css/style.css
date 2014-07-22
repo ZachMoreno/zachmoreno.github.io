@@ -148,8 +148,8 @@ main p {
   Folio
 =============================================*/
 
-/*figure {
-	background-image: -webkit-gradient( linear, right bottom, left top, color-stop(0, rgb(237, 154, 86)), color-stop(1, rgb(52, 235, 180)) );
+figure {
+	/*background-image: -webkit-gradient( linear, right bottom, left top, color-stop(0, rgb(237, 154, 86)), color-stop(1, rgb(52, 235, 180)) );
 	background-image: -o-linear-gradient(left top, rgb(237, 154, 86) 0%, rgb(52, 235, 180) 100%);
 	background-image: -moz-linear-gradient(left top, rgb(237, 154, 86) 0%, rgb(52, 235, 180) 100%);
 	background-image: -webkit-linear-gradient(left top, rgb(237, 154, 86) 0%, rgb(52, 235, 180) 100%);
@@ -158,11 +158,12 @@ main p {
 	-webkit-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
 	   -moz-box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
 	        box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
-	overflow: hidden;
-}*/
+	overflow: hidden;*/
+}
 
 figure img {
 	width: 100%;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	/*opacity: 0.5;*/
 }
 

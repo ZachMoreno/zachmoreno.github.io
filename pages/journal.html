@@ -34,6 +34,44 @@
 				<main class="col-9-12" id="mainCard">
 					<h1>Journal</h1>
 
+					<div class="post">
+						<h2 class="post-title">
+							The State of AngularJS Routing
+						</h2>
+
+						<div class="row">
+							<div class="col-12-12">
+								<p>AngularJS is structured in a modular fashion for ease of both maintenance &amp; dependency management. Moreover, the design is modular to facilitate an opportunity for developers to create 3<sup>rd</sup> party modules that extend, enhance or replace core Angular modules. Examples of this can be found on <a href="http://ngmodules.org/">ngModules.org</a>; popular community modules including <a href="http://ngmodules.org/modules/restangular">Restangular</a> and <a href="http://ngmodules.org/modules/ui-router">UI-Router</a>. Both of which are designed to <strong>replace</strong> core angular modules while hopefully enhancing your developer experience in the process. This seems to be the primary goal of 3<sup>rd</sup> party modules, as none are aimed at replacing core Angular functionality out of spite or disagreement in design. When analyzing the 3<sup>rd</sup> party modules available for extending/enhancing/replacing Angular's core $route engine I find some divergence in the community offered solutions.</p>
+								<h3>The problem with $route</h3>
+								<p>The core URL routing engine, $route, does not support nested views or persistent state-based management of them. Developers seeking this type of hierarchical view structure have no choice but to utilize community modules that augment the core $route engine and the $routeProvider. There are two options to choose from that provide this type of nested views and states functionality, the similarities and differences between them are as follows.</p>
+								
+								<div class="row">
+									<div class="col-5-12 offset-2-12">
+										<h4>UI-Router</h4>
+									</div>
+
+									<div class="col-5-12">
+										<h4>Angular-Route-Segment</h4>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-2-12">
+										<h5>Configuration</h5>
+									</div>
+
+									<div class="col-5-12">
+										<p>Familiar syntax when defining new route-view relationships &amp; only add syntax where needed to facilitate the parent-child structure necessary for achieving nested views.</p>
+									</div>
+
+									<div class="col-5-12">
+										<p>Familiar syntax when defining new route-view relationships &amp; only add syntax where needed to facilitate the parent-child structure necessary for achieving nested views.</p>
+									</div>
+								</div>
+							</div> <!-- end. .col-12-12 -->
+						</div> <!-- end. .row -->
+					</div> <!-- end .post -->
+
 					<script id="posts-template" type="text/x-handlebars-template">
 						<h1>{{posts.title}}</h1>
 						<small>{{posts.date}}</small>

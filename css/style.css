@@ -17,7 +17,7 @@ body {
 header {
 	height: 160px;
 	background-color: #1C7FA6;
-	/*background: url('../images/khan-academy-cosmos.jpg')no-repeat center center fixed; */
+	background: url('../images/khan-academy-cosmos.jpg')no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -71,7 +71,7 @@ aside ul#main-nav li a.active {
 /* Pre-animation */
 main {
 	margin-right: 10%;
-	padding: 10px 20px;
+	padding: 10px;
 	background-color: white;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	margin-top: 100000px !important;

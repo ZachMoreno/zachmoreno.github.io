@@ -71,7 +71,7 @@ aside ul#main-nav li a.active {
 /* Pre-animation */
 main {
 	margin-right: 10%;
-	padding: 10px 20px;
+	padding: 10px;
 	background-color: white;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	margin-top: 100000px !important;

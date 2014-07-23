@@ -4,7 +4,7 @@ angular.module('zm.controllers', [])
 	.controller('mainCtrl', ['$scope', function($scope) {
 
 	}])
-	
+
 	.controller('journalCtrl', ['$scope', function($scope) {
 
 	}])
@@ -18,5 +18,5 @@ angular.module('zm.controllers', [])
 	}])
 
 	.controller('aboutCtrl', ['$scope', function($scope) {
-
+		$scope.test = "test";
 	}]);

@@ -8,7 +8,7 @@ angular.module('zm', [
 ]).
 
 config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when('/', {
+	$routeProvider.when('/home', {
 		templateURL : 'views/home.html',
 		controller  : 'mainCtrl'
 	});
@@ -34,6 +34,6 @@ config(['$routeProvider', function($routeProvider) {
 	});
 
 	$routeProvider.otherwise({
-		redirectTo : '/'
+		redirectTo : '/home'
 	});
 }]);

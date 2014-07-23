@@ -8,6 +8,11 @@ angular.module('zm', [
 ]).
 
 config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {
+		templateURL : 'views/home.html',
+		controller  : 'mainCtrl'
+	});
+
 	$routeProvider.when('/journal', {
 		templateURL : 'views/journal.html',
 		controller  : 'journalCtrl'
@@ -23,8 +28,12 @@ config(['$routeProvider', function($routeProvider) {
 		controller  : 'folioCtrl'
 	});
 
-	$routeProvider.when('/about' {
+	$routeProvider.when('/about', {
 		templateURL : 'views/about.html',
 		controller  : 'aboutCtrl'
+	});
+
+	$routeProvider.otherwise({
+		redirectTo : '/'
 	});
 }]);

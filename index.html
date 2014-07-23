@@ -25,15 +25,15 @@
 			<div class="row">
 				<aside class="col-2-12">
 					<ul id="main-nav">
-						<li><a href="pages/journal.html" id="journalMenuItem">journal</a></li>
-						<li><a href="pages/health.html" id="healthMenuItem">health</a></li>
-						<li><a href="pages/folio.html" id="folioMenuItem">folio</a></li>
-						<li><a href="pages/about.html" id="aboutMenuItem">about</a></li>
+						<li><a href="#/journal" id="journalMenuItem">journal</a></li>
+						<li><a href="#/health" id="healthMenuItem">health</a></li>
+						<li><a href="#/folio" id="folioMenuItem">folio</a></li>
+						<li><a href="#/about" id="aboutMenuItem">about</a></li>
 					</ul>
 				</aside> <!-- end .col-2-12 -->
 
-				<main class="col-9-12" id="mainCard" ng-controller="mainCtrl">
-					
+				<main class="col-9-12 inPlace" id="mainCard" ng-view>
+					<!-- views injected here -->
 				</main> <!-- end .col-9-12 -->
 
 				<div class="col-1-12" id="fab">
@@ -51,8 +51,8 @@
 			<script src="js/controllers.js"></script>
 			<script src="js/services.js"></script>
 
-			<script src="js/jquery.min.js"></script>
-			<script src="js/main.js"></script>
+			<!-- <script src="js/jquery.min.js"></script>
+			<script src="js/main.js"></script> -->
 		</footer>
 	</body>
 </html>

@@ -17,7 +17,7 @@ body {
 header {
 	height: 160px;
 	background-color: #1C7FA6;
-	/*background: url('../images/khan-academy-cosmos.jpg')no-repeat center center fixed; */
+	background: url('../images/khan-academy-cosmos.jpg')no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

@@ -13,20 +13,20 @@ window.setTimeout(function(){
 }, 0);
 
 
-jQuery(document).ready(function(){
-	var raw_template = jQuery('#posts-template').html(),
-		template     = Handlebars.compile(raw_template),
-		placeHolder  = jQuery("#mainCard");
+// jQuery(document).ready(function(){
+// 	var raw_template = jQuery('#posts-template').html(),
+// 		template     = Handlebars.compile(raw_template),
+// 		placeHolder  = jQuery("#mainCard");
 
-	// Fetch all Blog Posts data from server in JSON
-	jQuery.get("http://zachariahmoreno.com/api/get_recent_posts/",function(data,status,xhr){
-		console.log(data);
+// 	// Fetch all Blog Posts data from server in JSON
+// 	jQuery.get("http://zachariahmoreno.com/api/get_recent_posts/",function(data,status,xhr){
+// 		console.log(data);
 		
-		jQuery.each(data,function(index,element){
-			var html = template(element);
-			placeHolder.append(html);
-		});
-	});
-});
+// 		jQuery.each(data,function(index,element){
+// 			var html = template(element);
+// 			placeHolder.append(html);
+// 		});
+// 	});
+// });
 
 

@@ -1,0 +1,19 @@
+{
+  "name": "zachmoreno.github.io",
+  "version": "0.0.1",
+  "homepage": "zachmoreno.github.io",
+  "authors": [
+    "Zachariah Moreno <xachmoreno@gmail.com>"
+  ],
+  "description": "Making Internet.",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

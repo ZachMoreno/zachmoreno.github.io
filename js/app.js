@@ -10,15 +10,25 @@ angular.module('zm', [
   'zm.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/home', {
+  	templateUrl: 'partials/home.html', 
+  	controller: 'homeCtrl'
+  });
+
   $routeProvider.when('/journal', {
   	templateUrl: 'partials/journal.html', 
-  	controller: 'MyCtrl1'
+  	controller: 'journalCtrl'
   });
 
   $routeProvider.when('/health', {
   	templateUrl: 'partials/health.html', 
-  	controller: 'MyCtrl2'
+  	controller: 'healthCtrl'
   });
 
-  $routeProvider.otherwise({redirectTo: '/journal'});
+  $routeProvider.when('/about', {
+  	templateUrl: 'partials/about.html', 
+  	controller: 'aboutCtrl'
+  });
+
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);

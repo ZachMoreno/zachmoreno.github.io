@@ -3,9 +3,18 @@
 /* Controllers */
 
 angular.module('zm.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+  .controller('homeCtrl', ['$scope', function($scope) {
 
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
+
+  .controller('journalCtrl', ['$scope', function($scope) {
+
+  }])
+
+  .controller('healthCtrl', ['$scope', function($scope) {
+
+  }])
+
+  .controller('aboutCtrl', ['$scope', function($scope) {
 
   }]);

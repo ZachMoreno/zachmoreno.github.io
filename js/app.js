@@ -25,6 +25,11 @@ config(['$routeProvider', function($routeProvider) {
   	controller: 'healthCtrl'
   });
 
+  $routeProvider.when('/folio', {
+    templateUrl: 'partials/folio.html', 
+    controller: 'folioCtrl'
+  });
+
   $routeProvider.when('/about', {
   	templateUrl: 'partials/about.html', 
   	controller: 'aboutCtrl'

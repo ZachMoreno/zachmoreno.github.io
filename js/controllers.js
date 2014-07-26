@@ -15,6 +15,10 @@ angular.module('zm.controllers', [])
 
   }])
 
+  .controller('folioCtrl', ['$scope', function($scope) {
+
+  }])
+
   .controller('aboutCtrl', ['$scope', function($scope) {
 
   }]);

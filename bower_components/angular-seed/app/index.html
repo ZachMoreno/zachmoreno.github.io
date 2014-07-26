@@ -6,57 +6,27 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Zach Moreno | Making Internet</title>
+  <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- h5bp -->
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-
-  <!-- web fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,400italic,300italic,100italic,500italic' rel='stylesheet' type='text/css'>
-
-  <!-- style -->
-  <link rel="stylesheet" href="css/grid.css"/>
   <link rel="stylesheet" href="css/app.css"/>
-
-  <!-- modernizr -->
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1 id="logo-type">
-      <a href="#/home" id="homeMenuItem">
-        Zach Moreno
-      </a>
-    </h1>
-  </header>
+  <ul class="menu">
+    <li><a href="#/view1">view1</a></li>
+    <li><a href="#/view2">view2</a></li>
+  </ul>
 
-  <div class="grid">
-      <div class="row">
-        <aside class="col-2-12">
-          <ul id="main-nav">
-            <li><a href="#/journal">journal</a></li>
-            <li><a href="#/health">health</a></li>
-            <li><a href="#/folio">folio</a></li>
-            <li><a href="#/about">about</a></li>
-          </ul> <!-- end .main-nav -->
-        </aside> <!-- end .col-2-12 -->
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
 
-        <main class="col-9-12 inPlace" id="mainCard">
-          <!--[if lt IE 7]>
-              <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-          <![endif]-->
+  <div ng-view></div>
 
-          <div ng-view></div>
-        </main> <!-- end .col-9-12 -->
-
-        <div class="col-1-12" id="fab">
-          <p>Z</p>
-        </div> <!-- end #fab -->
-      </div> <!-- end .row -->
-    </div> <!-- end .grid -->
+  <div>Angular seed app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

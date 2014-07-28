@@ -2,8 +2,24 @@
 
 /* Services */
 
+angular.module('zm.services', [])
 
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('zm.services', []).
-  value('version', '0.1');
+	.factory('recentPostsFactory', function($http) {
+		var promise;
+		var recentPostsFactory = {
+			async: function() {
+				if ( !promise ) {
+					// $http returns a promise, which has a then function, which also returns a promise
+					promise = $http.get('http://zachariahmoreno.com/api/get_recent_posts').then(function (response) {
+						// The then function here is an opportunity to modify the response
+						console.log(response);
+						// The return value gets picked up by the then in the controller.
+						return response.data;
+					});
+				}
+				// Return the promise to the controller
+				return promise;
+			}
+		};
+		return recentPostsFactory;
+	});

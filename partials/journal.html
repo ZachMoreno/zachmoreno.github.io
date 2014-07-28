@@ -1,1 +1,18 @@
 <h1>Journal</h1>
+
+<!-- <button ng-click="clearData()">Clear recent posts</button> -->
+
+
+<div class="card-segment">
+	<h2 ng-repeat-start="post in recentPosts.posts track by $index">
+		{{ post.title }}
+	</h2>
+
+	<small>
+		{{ post.date }}
+	</small>
+
+	<p ng-repeat-end>
+		{{ post.content }}
+	</p>
+</div>

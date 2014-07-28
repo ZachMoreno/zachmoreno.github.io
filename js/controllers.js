@@ -7,8 +7,20 @@ angular.module('zm.controllers', [])
 
   }])
 
-  .controller('journalCtrl', ['$scope', function($scope) {
+  .controller('journalCtrl', ['$scope', 'recentPostsFactory', function($scope, recentPostsFactory) {
+    $scope.clearData = function() {
+      $scope.recentPosts = {};
+    };
 
+    $scope.getData = function() {
+      // Call the async method and then do stuff with what is returned inside our own then function
+      recentPostsFactory.async().then(function(data) {
+        $scope.recentPosts = data;
+      });
+    };
+
+    // init data grab
+    $scope.getData();
   }])
 
   .controller('healthCtrl', ['$scope', function($scope) {

@@ -7,6 +7,7 @@ angular.module('zm.controllers', [])
 
   }])
 
+
   .controller('journalCtrl', ['$scope', 'recentPostsFactory', function($scope, recentPostsFactory) {
     $scope.clearData = function() {
       $scope.recentPosts = {};
@@ -21,13 +22,16 @@ angular.module('zm.controllers', [])
     }()); // fire away
   }])
 
+
   .controller('healthCtrl', ['$scope', function($scope) {
 
   }])
 
+
   .controller('folioCtrl', ['$scope', function($scope) {
 
   }])
+  
 
   .controller('aboutCtrl', ['$scope', function($scope) {
 

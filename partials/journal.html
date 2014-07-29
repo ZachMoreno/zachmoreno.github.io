@@ -1,18 +1,22 @@
 <h1>Journal</h1>
 
-<!-- <button ng-click="clearData()">Clear recent posts</button> -->
+<form class="form-search"> 
+	<div class="input-append">
+		<input type="text" ng-model="search" class="search-query" style="width: 80px">
+		<button type="submit" class="btn">Search</button>
+	</div>
+</form>
 
 
-<div class="card-segment">
-	<h2 ng-repeat-start="post in recentPosts.posts track by $index">
-		{{ post.title }}
-	</h2>
+<h2 ng-repeat-start="post in recentPosts.posts track by $index | filter:search" ng-animate=" 'animate' ">
+	{{ post.title }}
+</h2>
 
-	<small>
-		{{ post.date }}
-	</small>
+<small>
+	{{ post.date }}
+</small>
 
-	<p ng-repeat-end>
-		{{ post.content }}
-	</p>
-</div>
+<p ng-repeat-end>
+	{{ post.content }}
+</p>
+<!-- <p ng-repeat-end ng-bind-html="post.content | linky"></p> -->

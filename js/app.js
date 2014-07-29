@@ -4,6 +4,8 @@
 // Declare app level module which depends on filters, and services
 angular.module('zm', [
   'ngRoute',
+  'ngSanitize',
+  'ngAnimate',
   'zm.filters',
   'zm.services',
   'zm.directives',
@@ -36,4 +38,6 @@ config(['$routeProvider', function($routeProvider) {
   });
 
   $routeProvider.otherwise({redirectTo: '/home'});
+
+  // $locationProvider.html5Mode('true');
 }]);

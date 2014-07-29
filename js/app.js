@@ -7,6 +7,7 @@ angular.module('zm', [
   'ngSanitize',
   'ngAnimate',
   'firebase',
+  'ui.codemirror',
   'zm.filters',
   'zm.services',
   'zm.directives',

@@ -57,6 +57,15 @@ angular.module('zm.controllers', [])
         $scope.newPost.content = "";
         $scope.newPost.status = "";
     }
+
+    // CodeMirror config
+    $scope.editorConfig = {
+        value : 'Content in HTML',
+        lineWrapping : true,
+        lineNumbers : true,
+        mode : 'text/html',
+        theme : 'default'
+    };
   }])
 
 

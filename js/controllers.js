@@ -30,7 +30,6 @@ angular.module('zm.controllers', [])
 
     // Firebase
     var journalRef = new Firebase("https://zachmoreno.firebaseio.com/posts");
-
     $scope.posts = $firebase(journalRef);
 
     $scope.addPost = function() {

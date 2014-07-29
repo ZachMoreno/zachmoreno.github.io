@@ -8,7 +8,8 @@ angular.module('zm.controllers', [])
   }])
 
 
-  .controller('journalCtrl', ['$scope', 'recentPostsFactory', function($scope, recentPostsFactory) {
+  .controller('journalCtrl', ['$scope', 'recentPostsFactory', '$firebase', function($scope, recentPostsFactory, $firebase) {
+    // wp/api
     $scope.clearData = function() {
       $scope.recentPosts = {};
     };
@@ -20,6 +21,42 @@ angular.module('zm.controllers', [])
         $scope.recentPosts = promisedData;
       });
     }()); // fire away
+
+
+    // only apply .flip-card-container to journal view
+    var mainCard = document.getElementById("mainCard");
+    mainCard.setAttribute("class", "col-9-12 inPlace flip-card-container");
+
+
+    // Firebase
+    var journalRef = new Firebase("https://zachmoreno.firebaseio.com/posts");
+    $scope.posts = $firebase(journalRef);
+
+    $scope.addPost = function() {
+      if($scope.newPost.title
+         && $scope.newPost.content
+         && $scope.newPost.status) {
+        // only $add if all required fields have values
+        $scope.posts.$add ({
+          title    : $scope.newPost.title,
+          content  : $scope.newPost.content,
+          status   : $scope.newPost.status,
+          dateTime : Number(new Date())
+        });
+
+        // clean up
+        $scope.newPost.title = "";
+        $scope.newPost.content = "";
+        $scope.newPost.status = "";
+      }
+    }
+
+    $scope.clearPost = function() {
+        // clean up
+        $scope.newPost.title = "";
+        $scope.newPost.content = "";
+        $scope.newPost.status = "";
+    }
   }])
 
 

@@ -40,9 +40,9 @@
 	margin-left: 0;
 }
 
-.grid [class*='col-']:last-of-type {
+/*.grid [class*='col-']:last-of-type {
 	padding-right: 0;
-}
+}*/
 
 /* column x 100 / number of columns */
 

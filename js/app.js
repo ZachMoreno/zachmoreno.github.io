@@ -6,6 +6,7 @@ angular.module('zm', [
   'ngRoute',
   'ngSanitize',
   'ngAnimate',
+  'firebase',
   'zm.filters',
   'zm.services',
   'zm.directives',

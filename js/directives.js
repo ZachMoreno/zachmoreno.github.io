@@ -3,9 +3,9 @@
 /* Directives */
 
 
-angular.module('zm.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
+angular.module('zm.directives', [])
+  .directive('postcard', function() {
+    return {
+      templateUrl: 'partials/postcard.html'
     };
-  }]);
+  });

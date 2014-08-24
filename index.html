@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Test Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <!-- Platform -->
+        <script src="bower_components/platform/platform.js"></script>
+
+        <!-- Core -->
+        <link rel="import" href="bower_components/sampler-scaffold/sampler-scaffold.html">
+        <link rel="import" href="bower_components/core-item/core-item.html">
+        <link rel="import" href="bower_components/core-menu/core-submenu.html">
+
+        <!-- Paper -->
+        <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+        <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+
+        <!-- Typography -->
+        <link rel="import" href="bower_components/font-roboto/roboto.html">
+
+        <!-- Icons -->
+        <link rel="import" href="bower_components/core-icons/core-icons.html">
+
+        <!-- JS -->
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <style>
+            html,
+            body {
+                font-family: RobotoDraft, sans-serif;
+                color: #333;
+            }
+
+            paper-fab {
+                color: #fff;
+                top: 117px;
+                right: 24px;
+                position: absolute;
+                z-index: 1;
+                box-sizing: border-box;
+                width: 56px;
+                height: 56px;
+                background: #56d893;
+                border-radius: 50%;
+                fill: #fff;
+            }
+
+            /*core-toolbar {
+                background-color: #1C7FA6 !important;
+            }*/
+        </style>
+    </head>
+    <body unresolved>
+        <sampler-scaffold label="Zachariah Moreno">
+
+          <core-item label="Health" url="views/health.html"></core-item>
+          <core-item label="Journal" url="views/journal.html"></core-item>
+          <core-item label="Folio" url="views/folio.html"></core-item>
+          <core-item label="About" url="views/about.html"></core-item>
+        
+        </sampler-scaffold>
+        <paper-fab icon="add" onclick="document.querySelector('#toast1').show()"></paper-fab>
+    </body>
+</html>

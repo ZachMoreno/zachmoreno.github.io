@@ -24,8 +24,8 @@ angular.module('zm.controllers', [])
 
 
     // only apply .flip-card-container to journal view
-    var mainCard = document.getElementById("mainCard");
-    mainCard.setAttribute("class", "col-9-12 inPlace flip-card-container");
+    // var mainCard = document.getElementById("mainCard");
+    // mainCard.setAttribute("class", "col-9-12 inPlace flip-card-container");
 
 
     // Firebase
@@ -51,20 +51,26 @@ angular.module('zm.controllers', [])
       }
     }
 
+    $scope.editPost = function(editPostId) {
+      $scope.editPost.title = "";
+      $scope.editPost.content = "";
+      $scope.editPost.status = "";
+    }
+
     $scope.clearPost = function() {
-        // clean up
-        $scope.newPost.title = "";
-        $scope.newPost.content = "";
-        $scope.newPost.status = "";
+      // clean up
+      $scope.newPost.title = "";
+      $scope.newPost.content = "";
+      $scope.newPost.status = "";
     }
 
     // CodeMirror config
     $scope.editorConfig = {
-        value : 'Content in HTML',
-        lineWrapping : true,
-        lineNumbers : true,
-        mode : 'text/html',
-        theme : 'default'
+      value : 'Content in HTML',
+      lineWrapping : true,
+      lineNumbers : true,
+      mode : 'text/html',
+      theme : 'default'
     };
   }])
 

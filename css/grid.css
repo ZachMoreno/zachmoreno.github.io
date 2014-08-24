@@ -34,6 +34,7 @@
 
 .row {
 	clear: both;
+	/*overflow: auto;*/
 }
 
 .row [class*='col-']:first-child {

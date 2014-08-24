@@ -8,12 +8,14 @@ angular.module('zm', [
   'ngAnimate',
   'firebase',
   'ui.codemirror',
+  // 'ngFluidvids',
   'zm.filters',
   'zm.services',
   'zm.directives',
   'zm.controllers'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
   	templateUrl: 'partials/home.html', 
   	controller: 'homeCtrl'
@@ -42,4 +44,11 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 
   // $locationProvider.html5Mode('true');
-}]);
+}])
+
+.run(function(){
+  fluidvids.init({
+    selector: ['iframe', 'object'], // runs querySelectorAll()
+    players: ['www.youtube.com', 'player.vimeo.com'] // players to support
+  });
+});

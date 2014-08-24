@@ -2,16 +2,34 @@
 	<div class="flip-card-front">
 		<h1>Journal</h1>
 
-		<!-- postcard directive -->
-		<div postcard></div>
+		<div class="postcard" ng-repeat="post in posts | orderBy:post.dateTime:reverse" ng-animate="'animate'">
+			<h2 ng-if"{{ post.status }}=publish">
+				{{ post.title }}
+			</h2>
+
+			<span ng-click="editPost()">edit</span>
+
+			<small ng-if"{{ post.status }}=publish">
+				{{ post.dateTime | date:'MM/dd/yyyy @ h:mma' }}
+			</small>
+
+			<div ng-bind-html="post.content | html" ng-if"{{ post.status }}=publish">
+			</div>
+		</div> <!-- end .postcard -->
 	</div> <!-- end .flip-card-front -->
 
-	<div class="flip-card-back">
+	<div class="flip-card-back postcard">
+		<div class="row">
+			<div class="col-12-12">
+				<h2>Edit {{ post.title }}</h2>
+			</div> <!-- end .col-12-12 -->			
+		</div> <!-- end .row -->			
+
 		<div class="row">
 			<div class="col-10-12">
 				<input type="text" ng-model="newPost.title" placeholder="Title"/>
 
-				<ui-codemirror ng-model="newPost.content" ui-codemirror-opts="editorConfig"></ui-codemirror>
+				<ui-codemirror ng-model="newPost.content" ui-codemirror-opts="editorConfig">Content in HTML</ui-codemirror>
 			</div> <!-- end .col-10-12 -->
 
 			<div class="col-2-12">

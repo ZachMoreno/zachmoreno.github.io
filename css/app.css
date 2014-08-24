@@ -84,8 +84,8 @@ aside ul#main-nav li a.active {
 main {
   margin-right: 10%;
   padding: 10px;
-  background-color: white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  /*background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);*/
   margin-top: 100000px !important;
 }
 
@@ -112,6 +112,7 @@ main h1 {
   font-size: 34;
   font-weight: normal;
   color: #1C7FA6;
+  margin-left: 10px;
 }
 
 main h2 {
@@ -128,6 +129,11 @@ main p {
   font-size: 17px;
   font-weight: 300;
   line-height: 26px;
+}
+
+main img {
+  width: 100%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 /*=============================================
@@ -239,6 +245,20 @@ figure img {
   height: 0px;
 }
 
+.fluidvids {
+    width: 100%;
+    position: relative;
+}
+
+.fluidvids iframe {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /*=============================================
   About
 =============================================*/
@@ -249,7 +269,7 @@ figure img {
 =============================================*/
 
 
-/*.flip-card-container {
+.flip-card-container {
   perspective: 1000;
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -289,7 +309,8 @@ figure img {
 
 .flip-card-back {
   transform: rotateY(180deg);
-}*/
+  /*display: none;*/
+}
 
 .flip-card-back input,
 .flip-card-back ui-codemirror,
@@ -332,22 +353,23 @@ figure img {
   Postcard
 =============================================*/
 
-/*.postcard {
+.postcard {
   margin-bottom: 30px;
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  padding: 10px;
+  padding: 15px 50px;
+  overflow: auto;
 }
 
 .postcard:first-child {
-  padding-top: 59px;
-  margin-top: -80px;
+  padding-top: 51px;
+  margin-top: -69px;
 }
 
 .postcard main {
   background-color: transparent;
   box-shadow: none;
-}*/
+}
 
 /*=============================================
   Utility

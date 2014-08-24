@@ -148,8 +148,9 @@ main img {
      -moz-border-radius: 50px;
           border-radius: 50px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  margin-top: -30px !important;
-  margin-left: 40px !important;
+  position: absolute;
+  right: 30px;
+  top: 116px;
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
@@ -265,65 +266,64 @@ figure img {
 
 
 /*=============================================
-  Flip Card
+  Card
 =============================================*/
 
+.mainCard {
+  background-color: transparent;
+  box-shadow: none;
+}
 
-.flip-card-container {
-  perspective: 1000;
+.card-deck {
   transition: 0.6s;
   transform-style: preserve-3d;
-
   position: relative;
+  perspective: 800px;
 }
 
-.flip-card-container:hover,
-.flip-card-conteiner.hover {
-  transform: rotateY(180deg);
-}
+.card {
+  margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 15px 50px;
+  overflow: auto;
 
-.flip-card-front,
-.flip-card-back {
   width: 100%;
   height: 100%;
-}
-
-.flip-card {
-  transition: 0.6s;
+  /*position: absolute;*/
   transform-style: preserve-3d;
-
-  position: relative;
+  transition: transform 1s;
+  transform-origin: right center;
 }
 
-.flip-card-front, .flip-card-back {
+.card.flipped {
+  transform: translateX( -100% ) rotateY( -180deg );
+}
+
+.card:first-child {
+  padding-top: 51px;
+  margin-top: -69px;
+}
+
+.card .front,
+.card .back {
+  display: block;
+  /*position: absolute;*/
+  width: 100%;
+  height: 100%;
   backface-visibility: hidden;
-
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
-.flip-card-front {
-  z-index: 2;
+.card .front {
+
 }
 
-.flip-card-back {
-  transform: rotateY(180deg);
+.card .back {
+  /*transform: rotateY( 180deg );*/
   /*display: none;*/
 }
 
-.flip-card-back input,
-.flip-card-back ui-codemirror,
-.flip-card-back select,
-.flip-card-back button
- {
-  width: 100%;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  padding: 5px;
-}
-
-.flip-card-back .CodeMirror {
+.card .CodeMirror {
   font-family: 'Source Code Pro';
   font-size: 17px;
   /*font-weight: 300;*/
@@ -332,43 +332,27 @@ figure img {
   border: 1px solid rgb(169, 169, 169);
 }
 
-.flip-card-back label {
+.card label {
   display: block;
   clear: both;
   width: 100%
 }
 
-.flip-card-back button {
+.card button {
   display: block;
   clear: both;
 }
 
-.flip-card-back input {
+.card input {
   font-size: 1.5em;
+  width: 100%;
   color: #1C7FA6;
+  margin-bottom: 15px;
+  border-radius: 3px;
 }
 
-
-/*=============================================
-  Postcard
-=============================================*/
-
-.postcard {
-  margin-bottom: 30px;
-  background-color: white;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  padding: 15px 50px;
-  overflow: auto;
-}
-
-.postcard:first-child {
-  padding-top: 51px;
-  margin-top: -69px;
-}
-
-.postcard main {
-  background-color: transparent;
-  box-shadow: none;
+.card select {
+  width: 100%;
 }
 
 /*=============================================
@@ -385,6 +369,9 @@ figure img {
   border: none;
   border-radius: 3px;
   color: white;
+  padding: 2px 6px 3px;
+  cursor: pointer;
+  width: 100%;
 }
 
 .ice {
@@ -393,4 +380,50 @@ figure img {
   border: none;
   border-radius: 3px;
   color: white;
+  padding: 2px 6px 3px;
+  cursor: pointer;
+  width: 100%;
 }
+
+.veg {
+  background-color: rgb(0, 183, 7);
+  /*border: 1px solid rgb(0, 101, 158);*/
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 2px 6px 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.feedback {
+  color: grey;
+  -webkit-animation: feedback-fade-in-out 5s;
+  -moz-animation:    feedback-fade-in-out 5s;
+  -o-animation:      feedback-fade-in-out 5s;
+  animation:         feedback-fade-in-out 5s;
+}
+
+-webkit-keyframes feedback-fade-in-out {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes feedback-fade-in-out {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes feedback-fade-in-out {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes feedback-fade-in-out {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+

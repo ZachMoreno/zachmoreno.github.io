@@ -4,9 +4,9 @@
 
 
 angular.module('zm.directives', [])
-  .directive('postcard', function() {
+  .directive('zm-posts', function() {
     return {
-      templateUrl: 'partials/postcard.html'
+      templateUrl: 'partials/zm-posts.html'
     };
   })
 

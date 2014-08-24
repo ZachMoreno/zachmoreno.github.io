@@ -1,22 +1,20 @@
-<div class="flip-card">
-	<div class="flip-card-front">
-		<div class="postcard" ng-repeat="post in posts | orderBy:post.dateTime:reverse" ng-animate="'animate'">
-			<h2 ng-if"{{ post.status }}=publish">
-				{{ post.title }}
-			</h2>
+<div class="card-deck">
+	<div class="card" ng-repeat="post in posts | orderBy:post.dateTime:reverse" ng-animate="'animate'">
+		<h2 ng-if"{{ post.status }}=publish">
+			{{ post.title }}
+		</h2>
 
-			<span ng-click="editPost()">edit</span>
+		<span ng-click="editPost()">edit</span>
 
-			<small ng-if"{{ post.status }}=publish">
-				{{ post.dateTime | date:'MM/dd/yyyy @ h:mma' }}
-			</small>
+		<small ng-if"{{ post.status }}=publish">
+			{{ post.dateTime | date:'MM/dd/yyyy @ h:mma' }}
+		</small>
 
-			<div ng-bind-html="post.content | html" ng-if"{{ post.status }}=publish">
-			</div>
-		</div> <!-- end .postcard -->
-	</div> <!-- end .flip-card-front -->
+		<div ng-bind-html="post.content | html" ng-if"{{ post.status }}=publish">
+		</div>
+	</div> <!-- end .postcard -->
 
-	<div class="flip-card-back postcard">
+	<div class="card">
 		<div class="row">
 			<div class="col-12-12">
 				<h2>Edit {{  post.title }}</h2>
@@ -47,5 +45,5 @@
 				</div> <!-- end .row -->
 			</div> <!-- end .col-2-12 -->
 		</div> <!-- end .row -->
-	</div> <!-- end .flip-card-back -->
-<div class="flip-card"> <!-- end .flip-card -->
+	</div> <!-- end .card -->
+</div> <!-- end .card-deck -->

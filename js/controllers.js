@@ -48,20 +48,42 @@ angular.module('zm.controllers', [])
         $scope.newPost.title = "";
         $scope.newPost.content = "";
         $scope.newPost.status = "";
+
+        // feedback
+        $scope.feedback = "Successfully saved post";
       }
     }
 
-    $scope.editPost = function(editPostId) {
-      $scope.editPost.title = "";
-      $scope.editPost.content = "";
-      $scope.editPost.status = "";
+    $scope.editPost = function(id) {
+      $scope.editedPost = $scope.posts[id];
+      console.log($scope.editedPost);
+
+      $scope.originalPost = angular.extend({}, $scope.editedPost);
     }
+
+    $scope.doneEditing = function (id) {
+      $scope.editedPost = null;
+      var title    = $scope.posts[id].title.trim(),
+          content  = $scope.posts[id].content.trim(),
+          status   = $scope.posts[id].status.trim(),
+          dateTime = Number(new Date());
+
+      if (title, content, status, dateTime) {
+        $scope.posts.$save(id);
+        $scope.feedback = "Successfully updated post";
+      } else {
+        $scope.removePost(id);
+      }
+    };
 
     $scope.clearPost = function() {
       // clean up
       $scope.newPost.title = "";
       $scope.newPost.content = "";
       $scope.newPost.status = "";
+      $scope.editPost.title = "";
+      $scope.editPost.content = "";
+      $scope.editPost.status = "";
     }
 
     // CodeMirror config

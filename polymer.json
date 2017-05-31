@@ -1,11 +1,12 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "src/zm-app.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    "src/zm-home.html",
+    "src/zm-health.html",
+    "src/zm-work.html",
+    "src/zm-connect.html",
+    "src/zm-view404.html"
   ],
   "sources": [
     "src/**/*",

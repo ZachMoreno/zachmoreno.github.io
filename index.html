@@ -1,101 +1,92 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>     
-  <html lang="en" ng-app="zm" class="no-js lt-ie9 lt-ie8 lt-ie7">
-<![endif]-->
-<!--[if IE 7]>        
-  <html lang="en" ng-app="zm" class="no-js lt-ie9 lt-ie8">
-<![endif]-->
-<!--[if IE 8]>        
-  <html lang="en" ng-app="zm" class="no-js lt-ie9">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-  <html lang="en" ng-app="zm" class="no-js">
-<!--<![endif]-->
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Zach Moreno | Making Internet</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Polymer Starter Kit">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <!-- h5bp -->
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+    <title>Zachariah Moreno</title>
+    <meta name="description" content="Entrepreneur, Developer, Designer">
 
-    <!-- web fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,400italic,300italic,100italic,500italic' rel='stylesheet' type='text/css'>
-
-    <!-- style -->
-    <link rel="stylesheet" href="css/grid.css"/>
-    <link rel="stylesheet" href="css/app.css"/>
-
-    <!-- modernizr -->
-    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-  </head>
-
-  <body>
-    <header>
-      <h1 id="logo-type">
-        <a href="#/home" id="homeMenuItem">
-          Zach Moreno
-        </a>
-      </h1>
-    </header>
-
-    <div class="grid" id="full-wrapper">
-        <div class="row">
-          <aside class="col-2-12">
-            <ul id="main-nav">
-              <li><a href="#/journal">journal</a></li>
-              <li><a href="#/health">health</a></li>
-              <li><a href="#/folio">folio</a></li>
-              <li><a href="#/about">about</a></li>
-            </ul> <!-- end .main-nav -->
-          </aside> <!-- end .col-2-12 -->
-
-          <main class="col-9-12 inPlace" id="mainCard">
-            <!--[if lt IE 7]>
-                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
-
-            <div ng-view></div>
-          </main> <!-- end .col-9-12 -->
-
-          <div class="col-1-12" id="fab">
-            <p>Z</p>
-          </div> <!-- end #fab -->
-        </div> <!-- end .row -->
-    </div> <!-- end .grid -->
-
-    <!-- In production use:
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    <!--
+      If deploying to a non-root path, replace href="/" with the full path to the project root.
+      For example: href="/polymer-starter-kit/relative-path-example/"
     -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/directives.js"></script>
+    <base href="/">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Zachariah Moreno">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My App">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
 
     <script>
-      var fadeStart =100, // 100px scroll or less will equiv to 1 opacity
-          fadeUntil =200, // 200px scroll or more will equiv to 0 opacity
-          fading    = document.getElementById('fading');
+      // Register the base URL
+      const baseUrl = document.querySelector('base').href;
 
-      window.addEventListener(function(){
-          var offset = $(document).scrollTop()
-              ,opacity=0
-          ;
-          if( offset<=fadeStart ){
-              opacity=1;
-          }else if( offset<=fadeUntil ){
-              opacity=1-offset/fadeUntil;
-          }
-          fading.css('opacity',opacity).html(opacity);
-      });
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register(baseUrl + 'service-worker.js');
+        });
+      }
     </script>
+
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!-- Load your application shell -->
+    <link rel="import" href="src/zm-app.html">
+
+    <!-- Add any global styles for body, document, etc. -->
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #eeeeee;
+      }
+    </style>
+  </head>
+  <body>
+    <zm-app></zm-app>
+    <noscript>
+      Please enable JavaScript to view this website.
+    </noscript>
+    <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>
